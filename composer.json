@@ -1,18 +1,18 @@
 {
-  "name": "moyi/socket",
-  "description": "websocket api server, inspired by pusher",
-  "authors": [
-    {
-      "name": "wengxiaotong",
-      "email": "345561446@qq.com"
+    "name": "moyi/socket",
+    "description": "websocket api server, inspired by pusher",
+    "authors": [
+        {
+            "name": "wengxiaotong",
+            "email": "345561446@qq.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Moyi\\Socket\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.4"
     }
-  ],
-  "autoload": {
-    "psr-4": {
-      "Moyi\\Socket\\": "src/"
-    }
-  },
-  "require": {
-    "php": ">=7.4"
-  }
 }
