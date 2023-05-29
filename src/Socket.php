@@ -1,6 +1,6 @@
 <?php
 
-namespace Socket;
+namespace Moyi\Socket;
 
 class Socket
 {
