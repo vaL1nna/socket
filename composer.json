@@ -1,0 +1,7 @@
+{
+  "name": "val1nna/socket",
+  "description": "A web socket server.",
+  "require": {
+    "php": ">=7.4"
+  }
+}
