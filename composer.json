@@ -19,7 +19,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Moyi\\Socket\\SocketServiceProvider"
+                "Moyi\\Socket\\Provider\\SocketServiceProvider"
             ]
         }
     },
