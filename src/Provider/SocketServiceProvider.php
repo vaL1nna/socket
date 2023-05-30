@@ -9,6 +9,8 @@ class SocketServiceProvider extends ServiceProvider
 {
     public function register()
     {
+        $this->mergeConfigFrom(__DIR__ . '/../../config/socket.php', 'socket');
+
         $this->app->singleton(Socket::class, function ($app) {
             return new Socket(
                 $app['config']->get('socket.key'),
@@ -16,5 +18,12 @@ class SocketServiceProvider extends ServiceProvider
                 $app['config']->get('socket.host')
             );
         });
+    }
+
+    public function boot()
+    {
+        $this->publishes([
+            __DIR__.'/../config/my-package.php' => config_path('my-package.php'),
+        ], 'config');
     }
 }
