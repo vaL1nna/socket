@@ -13,6 +13,14 @@
         }
     },
     "require": {
-        "php": ">=7.4"
+        "php": ">=7.4",
+        "illuminate/support": "^10.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Moyi\\Socket\\SocketServiceProvider"
+            ]
+        }
     }
 }
