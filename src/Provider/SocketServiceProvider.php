@@ -13,8 +13,8 @@ class SocketServiceProvider extends ServiceProvider
 
         $this->app->singleton(Socket::class, function ($app) {
             return new Socket(
-                $app['config']->get('socket.key'),
-                $app['config']->get('socket.secret'),
+                $app['config']->get('socket.app_id'),
+                $app['config']->get('socket.app_secret'),
                 $app['config']->get('socket.host')
             );
         });
