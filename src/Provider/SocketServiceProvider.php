@@ -23,7 +23,7 @@ class SocketServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../config/my-package.php' => config_path('my-package.php'),
+            __DIR__.'/../../config/socket.php' => config_path('socket.php'),
         ], 'config');
     }
 }
