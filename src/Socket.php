@@ -4,16 +4,29 @@ namespace Moyi\Socket;
 
 class Socket
 {
-    private $config;
+    public string $appId;
 
-    public function __construct(Config $config)
+    public string $secret;
+
+    public string $host;
+
+    public function __construct(string $appId, string $secret, string $host)
     {
-        $this->config = $config;
+        $this->appId = $appId;
+
+        $this->secret = $secret;
+
+        $this->host = $host;
     }
 
+    /**
+     * @param string $socketId
+     * @param string $channel
+     * @return string
+     */
     public function encrypt(string $socketId, string $channel)
     {
-        return md5(sprintf('%s:%s:%s', $socketId, $channel, $this->config->secret));
+        return md5(sprintf('%s:%s:%s', $socketId, $channel, $this->secret));
     }
 
     public function trigger()
