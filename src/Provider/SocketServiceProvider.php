@@ -4,6 +4,7 @@ namespace Moyi\Socket\Provider;
 
 use Illuminate\Support\ServiceProvider;
 use Moyi\Socket\Socket;
+use Moyi\Socket\SocketManager;
 
 class SocketServiceProvider extends ServiceProvider
 {
@@ -12,11 +13,7 @@ class SocketServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__ . '/../../config/socket.php', 'socket');
 
         $this->app->singleton(Socket::class, function ($app) {
-            return new Socket(
-                $app['config']->get('socket.app_id'),
-                $app['config']->get('socket.app_secret'),
-                $app['config']->get('socket.host')
-            );
+            return new SocketManager($app);
         });
     }
 

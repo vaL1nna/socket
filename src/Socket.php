@@ -10,13 +10,13 @@ class Socket
 
     public string $host;
 
-    public function __construct(string $appId, string $secret, string $host)
+    public function __construct(array $options = [])
     {
-        $this->appId = $appId;
+        $this->appId = $options['appId'] ?? '';
 
-        $this->secret = $secret;
+        $this->secret = $options['secret'] ?? '';
 
-        $this->host = $host;
+        $this->host = $options['host'] ?? '';
     }
 
     /**

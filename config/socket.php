@@ -2,9 +2,13 @@
 
 return
 [
-    'app_id' => env('SOCKET_APP_ID'),
+    'default' => env('SOCKET_CONNECTION', 'default'),
 
-    'app_secret' => env('SOCKET_APP_SECRET'),
-
-    'host' => env('SOCKET_HOST')
+    'connections' => [
+        'default' => [
+            'app_id' => env('SOCKET_APP_ID'),
+            'app_secret' => env('SOCKET_APP_SECRET'),
+            'host' => env('SOCKET_HOST')
+        ],
+    ]
 ];
